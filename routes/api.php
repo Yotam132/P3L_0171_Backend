@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 $route = 'App\\Http\\Controllers\\';
 
+Route::middleware(['cors'])->group(function () {
+    Route::post('/hogehoge', 'Controller@hogehoge');
+});
 
 Route::post('login', $route . 'Api\LoginController@login');
 Route::get('detailjdw', $route . 'Api\DetailJadwalController@showAllData');
